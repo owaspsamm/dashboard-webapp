@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Q = require('q');
+const Q = require('Q');
 //const ctrlUser = require('../controllers/user.controller');
 const secret = 'harrypotter';
 const nodemailer = require('nodemailer');
