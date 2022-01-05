@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Q = require('Q');
+const Q = require('q');
 const path = require('path')
 // const db1 = require('../db/mobsf');
 //const ctrlUser = require('../controllers/user.controller');

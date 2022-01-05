@@ -1,14 +1,13 @@
 const express = require('express');
-var Q = require('Q');
+var Q = require('q');
 const router = express.Router();
 var secret = 'harrypotter';
 var nodemailer = require('nodemailer');
 const db=require('../db/config_vsamm');
 var jwt = require('jsonwebtoken');
-var Q = require('Q');
 const Speakeasy = require("speakeasy");
 var formidable = require('formidable');
-var User = require('../models/user');
+var User = require('../models/User');
 var path = require('path');
 var async = require('async');
 router.post('/changeprofile', function(req, res) {

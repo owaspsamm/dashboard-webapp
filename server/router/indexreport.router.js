@@ -1,7 +1,7 @@
 const moment = require('moment');
 const express = require("express");
 const router = express.Router();
-const Q = require("Q");
+const Q = require("q");
 const json2xls = require("json2xls");
 //const ctrlUser = require('../controllers/user.controller');
 require("nodemailer");
