@@ -688,12 +688,6 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`name`, `createdAt`, `updatedAt`, `id`) VALUES
-('USER', '2020-03-08 12:09:09', '2020-03-08 12:09:09', 1),
-('AUDITOR', '2020-03-08 12:09:09', '2020-03-08 12:09:09', 2),
-('ADMIN', '2020-03-08 12:09:09', '2020-03-08 12:09:09', 3),
-('USER', '2020-07-07 18:36:02', '2020-07-07 18:36:02', 1),
-('AUDITOR', '2020-07-07 18:36:02', '2020-07-07 18:36:02', 2),
-('ADMIN', '2020-07-07 18:36:02', '2020-07-07 18:36:02', 3),
 ('USER', '2020-07-07 18:37:13', '2020-07-07 18:37:13', 1),
 ('AUDITOR', '2020-07-07 18:37:13', '2020-07-07 18:37:13', 2),
 ('ADMIN', '2020-07-07 18:37:13', '2020-07-07 18:37:13', 3);
@@ -1211,6 +1205,12 @@ ALTER TABLE `verify_security`
   ADD PRIMARY KEY (`vsamm_id`);
 
 --
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -1239,6 +1239,12 @@ ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -1246,7 +1252,7 @@ ALTER TABLE `users`
 -- Constraints for table `user_roles`
 --
 ALTER TABLE `user_roles`
-  ADD CONSTRAINT `user_roles_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `role_copy` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_roles_ibfk_1` FOREIGN KEY (`roleId`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `user_roles_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
