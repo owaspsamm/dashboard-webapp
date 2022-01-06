@@ -56,12 +56,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Software Requirements
 
-1) NodeJS: https://nodejs.org/en/download/  
-   a. Make sure your node server is installed and check the version by running the command `npm -v` in command prompt.  
+1) NodeJS: https://nodejs.org/en/download/
+   a. Use v12 from the previous downloads section
+   b. Make sure your node server is installed and check the version by running the command `npm -v` in command prompt.  
    Note: Make sure your npm path added to your environment variable. 
 
 2) Angular CLI:  After installing NodeJS, install angular CLI.  
-    a. To install Angular CLI, run command `npm install -g @angular/cli` in your command line.  
+    a. To install Angular CLI, run command `npm install -g @angular/cli@8` in your command line.  
             Reference: https://cli.angular.io/
 
     b. You can check your angular cli version by running the command `npm -v` in command prompt.  
