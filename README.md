@@ -104,8 +104,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
     NOTE:: If you successfully ran the sql script (samm.sql) earlier, expect to see a stack trace from server2 attempting to update the database. This should be fine as those entries are already in the database.
 
-6) To run the angular app, go to the parent directory `/src` and run `ng serve` in cmd. (Do not close this terminal)
-7) Open browser and navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+6) To run the angular app, go to the parent directory `/src` and run `ng serve --port 4208` in cmd. (Do not close this terminal)
+7) Open browser and navigate to `http://localhost:4208/`. The app will automatically reload if you change any of the source files.
     
 ## Default User Credentials
 Normal User Credentials - Can update scores for the business functions and security practices  
@@ -119,16 +119,7 @@ Password - Auditor@123
 Admin Credentials - Admin can add users to the portal and edit the questions.  
 Username - Admin  
 Password - Admin@123
-    
 
-## To Serve Outside
-
-Static Public IP Configuration:  
-Navigate to `samm\src\environments\environment.ts` file.  
-Assign Public IP to the const token `hostname` 
-
-Run Command:  
-Run ng serve `ng serve --host 0.0.0.0 --port <your preferred port>`
 
 ## Build
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
