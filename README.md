@@ -2,16 +2,6 @@
 
 <p align="center"><a href="https://owasp.org" target="_blank" rel="noopener noreferrer"><img width="100" src="src/favicon.ico" alt="OWASP logo"></a></p>
 
-<p align="center">
-  <a href="https://circleci.com/gh/vuejs/vue/tree/dev"><img src="https://img.shields.io/circleci/project/github/vuejs/vue/dev.svg?sanitize=true" alt="Build Status"></a>
-  <a href="https://codecov.io/github/vuejs/vue?branch=dev"><img src="https://img.shields.io/codecov/c/github/vuejs/vue/dev.svg?sanitize=true" alt="Coverage Status"></a>
-  <a href="https://npmcharts.com/compare/vue?minimal=true"><img src="https://img.shields.io/npm/dm/vue.svg?sanitize=true" alt="Downloads"></a>
-  <a href="https://www.npmjs.com/package/vue"><img src="https://img.shields.io/npm/v/vue.svg?sanitize=true" alt="Version"></a>
-  <a href="https://www.npmjs.com/package/vue"><img src="https://img.shields.io/npm/l/vue.svg?sanitize=true" alt="License"></a>
-  <a href="https://chat.vuejs.org/"><img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg?sanitize=true" alt="Chat"></a>
-  <br>
-  <a href="https://app.saucelabs.com/builds/50f8372d79f743a3b25fb6ca4851ca4c"><img src="https://app.saucelabs.com/buildstatus/vuejs" alt="Build Status"></a>
-</p>
 
 # SAMM
 
@@ -77,7 +67,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     b. You can check your angular cli version by running the command `npm -v` in command prompt.  
     Note: Make sure angular cli path is added to your environment variable.  
     
-3) Mysql (Xampp Server): https://www.apachefriends.org/download.html or MYSQL Server 
+3) Mysql (Xampp Server): https://www.apachefriends.org/download.html or MYSQL Server
 
 ## Installation Instructions 
 
@@ -96,18 +86,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     4) Restart the Mysql Server via xampp control Pannel.
     
 3) From phpmyadmin and in database import the `samm.sql` file in a new database as `samm`.
-    #### For Mysql 
+    #### For MySQL 
+    If you are running standalone MySQL 8.x in a linux distro and not normally running as root, you will need to run mysql commands with sudo. This prevents the web application from being able connect. To overcome this, use the following command for MySQL 8.x.
+    `sudo mysql -u root -e "ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'root';"`.
+    
     Open command propmt in the parent directory and run `mysql` (Mysql should be added to the path of environment variables). Execute the following queries to import the `.sql` file,  
     `create database samm;`  
     `use samm;`  
     `mysql -u username –-password=your_password database_name < Path/to/samm.sql`
 4) Navigate to `/server` directory and open command prompt and run the command:  
-     `npm install nodemon`  
-      Aftet installation, run the command:`npm start`(Do not close this terminal)
+     `npm install` and `npm install nodemon`  
+      After installation, run the command:`npm start`(Do not close this terminal)
 5) Navigate to `/server2` directory and open command prompt and run the command:  
-    `npm install nodemon`   
-    Aftet installation, run the command:`npm start`(Do not close this terminal)
-6) To run the angular app, go to the parent directory `/SAMM` and run `ng serve` in cmd. (Do not close this terminal)
+    `npm install` and `npm install nodemon`   
+    After installation, run the command:`npm start`(Do not close this terminal)
+
+    NOTE:: If you successfully ran the sql script (samm.sql) earlier, expect to see a stack trace from server2 attempting to update the database. This should be fine as those entries are already in the database.
+
+6) To run the angular app, go to the parent directory `/src` and run `ng serve` in cmd. (Do not close this terminal)
 7) Open browser and navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
     
 ## Default User Credentials
